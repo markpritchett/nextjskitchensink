@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier:run": "prettier --write ."
+    "prettier:run": "prettier --write .",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@types/react": "17.0.19",
+    "cypress": "^8.3.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
