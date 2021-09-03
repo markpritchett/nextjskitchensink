@@ -28,6 +28,13 @@ exports[`renders homepage unchanged 1`] = `
         pages/index.js
       </code>
     </p>
+    <a
+      href="/counter"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Counter
+    </a>
     <div
       className="grid"
     >
