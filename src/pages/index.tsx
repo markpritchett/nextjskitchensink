@@ -3,8 +3,30 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import usePagination from "../hooks/usePagination";
 
 const Home: NextPage = () => {
+  const items = [
+    { id: 1, name: "Bob 1" },
+    { id: 2, name: "Bob 2" },
+    { id: 3, name: "Bob 3" },
+    { id: 4, name: "Bob 4" },
+    { id: 5, name: "Bob 5" },
+    { id: 6, name: "Bob 6" },
+    { id: 7, name: "Bob 7" },
+    { id: 8, name: "Bob 8" },
+    { id: 9, name: "Bob 9" },
+    { id: 10, name: "Bob 10" },
+  ];
+
+  const {
+    currentPageItems,
+    hasNextPage,
+    hasPreviousPage,
+    goToNextPage,
+    goToPreviousPage,
+  } = usePagination(items, 0, 2);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -23,8 +45,22 @@ const Home: NextPage = () => {
           <code className={styles.code}>pages/index.js</code>
         </p>
 
+u        {currentPageItems.map((item) => (
+          <div key={item.id}>Hello {item.name}</div>
+        ))}
+
+        <button type="button" disabled={!hasNextPage} onClick={goToNextPage}>
+          Next
+        </button>
+
+        {hasPreviousPage && (
+          <button type="button" onClick={goToPreviousPage}>
+            Back
+          </button>
+        )}
+
         <Link href="/counter">
-        <a>Counter</a>
+          <a>Counter</a>
         </Link>
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>

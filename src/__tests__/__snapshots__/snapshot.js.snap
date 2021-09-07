@@ -28,6 +28,22 @@ exports[`renders homepage unchanged 1`] = `
         pages/index.js
       </code>
     </p>
+    u        
+    <div>
+      Hello 
+      Bob 1
+    </div>
+    <div>
+      Hello 
+      Bob 2
+    </div>
+    <button
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Next
+    </button>
     <a
       href="/counter"
       onClick={[Function]}
