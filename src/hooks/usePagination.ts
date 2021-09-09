@@ -21,6 +21,11 @@ export default function usePagination(
     () => setCurrentPageNumber((x) => x - 1),
     []
   );
+  
+  const goToPage = useCallback(
+    (pageNumber: number) => setCurrentPageNumber((x) => pageNumber),
+    []
+  );
 
   return {
     itemCount,
@@ -31,5 +36,6 @@ export default function usePagination(
     hasPreviousPage,
     goToNextPage,
     goToPreviousPage,
+    goToPage,
   };
 }
